@@ -1,0 +1,40 @@
+.mainMenu{
+    
+        width: 100%;
+        align-items: center;
+    
+}
+
+.mainBody{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.containerMenu{
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-columns: 200px;
+    grid-auto-flow: column;
+    background-color: #fff;
+    color: #444;
+    .box {
+        color: #fff;
+        background-color: #420909;
+        font-size: 150%;
+        border-radius: 5px;
+        
+    }
+}
+
+.box{
+    background-color: aqua;
+}
+
+.mainTittle{
+    margin-left: 10%;
+    font-size: 200%;
+    font-family: 'Times New Roman', Times, serif;
+}
+button{
+    background-color: #F4CE14;
+    margin-left: 30%;
+}
