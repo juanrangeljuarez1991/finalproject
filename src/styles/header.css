@@ -1,0 +1,35 @@
+#mainheader{
+    background-color: #495E57;
+    padding-left: 5%;
+    display: flex;
+}
+
+#headerLittleLemon{
+    font-family: "Times New Roman", Times, serif;
+    color: #F4CE14;
+}
+
+#subTitle{
+    color: white;
+}
+
+div > p {
+    color: white;
+}
+
+#buttonreserve{
+    float: left;
+}
+
+#textContainer{
+    padding-right: 15%;
+}
+
+#imageContainer{
+    padding-top: 40%;
+    margin-top: 30%;
+}
+
+#imageContainer > a{
+    border: 2px solid coral;
+}
