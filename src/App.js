@@ -1,19 +1,41 @@
 
 import Header from "./components/Header";
-
 import Footer from "./components/Footer";
 import MainSection from "./components/MainSection";
+import './styles/nav.css'
+import Homepage from "./components/Homepage.js"
+import Specials from './components/Specials.js'
+import Customersay from "./components/customersay.js"
+import Chicago from "./components/Chicago.js"
+import Booking from './components/Booking.js'
+import { Routes, Route, Link } from 'react-router-dom'
 
 
 function App() {
   return (
       
         <main>
-          <Header />
-          <MainSection />
-          <Footer />
-                   
+            <div className='navbar'>
+                  <ul>
+                      <nav className='nav'>
+                          <a><img src={require('./images/logo.jpeg')} width="200" height="50" /></a>
+                          <Link to="/">Home</Link>
+                          <Link to="/specials">Specials</Link>
+                          <Link to="/customersay">CustomerSay</Link>
+                          <Link to="/chicago">Chicago</Link>
+                          <Link to="/booking">Booking</Link>
+                      </nav>
+                      <Routes>
+                          <Route path="/" element={<Homepage />} />
+                          <Route path="/specials" element={<Specials />} />
+                          <Route path="/customersay" element={<Customersay />} />
+                          <Route path="/chicago" element={<Chicago />} />
+                          <Route path="/booking" element={<Booking />} />
+                      </Routes>
+                  </ul>
+              </div>
           
+          <Footer />
        </main>
 
   );

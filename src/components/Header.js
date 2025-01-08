@@ -14,7 +14,6 @@ const Header = () => {
                      <meta name="og:description" content="Little Lemon is a restaurant that sells Mediterranean food"/>
                      <meta name="og:image" content="../images/logo.jpeg"/>
                  </head>
-                 <a><Navbar /></a>
                  <div id="mainheader">
                     <div id="textContainer">
                             <h1 id="headerLittleLemon">Little Lemon</h1>

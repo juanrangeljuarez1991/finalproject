@@ -1,0 +1,56 @@
+.mainMenu{
+    
+    width: 100%;
+    align-items: center;
+
+}
+
+.mainBodyS{
+margin-left: 2%;
+margin-top: 2%;
+}
+.containerMenuS{
+    display: grid;
+    grid-gap: 35px;
+    grid-auto-flow: column;
+    grid-template-rows: 350px 350px;
+    background-color: #fff;
+    color: #444;
+    .box {
+        color: black;
+        background-color: #D3D3D3;
+        font-size: 150%;
+        border-radius: 5px;
+        
+    }
+}
+
+
+.mainTittle{
+margin-left: 10%;
+font-size: 200%;
+font-family: 'Times New Roman', Times, serif;
+}
+button{
+background-color: #F4CE14;
+margin-left: 30%;
+}
+
+.cardTitle{
+display: flex;
+font-size: 15px;
+}
+
+#cardTitlePrice{
+color: #c98014;
+padding-left: 20%;
+}
+
+.itemDescription{
+font-size: 50%;
+color: #040704b2;
+}
+
+h5 {
+font-size: 70%;
+}

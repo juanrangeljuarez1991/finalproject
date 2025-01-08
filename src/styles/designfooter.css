@@ -1,0 +1,11 @@
+.footerdesign{
+    text-align: center;
+    padding: 5px;
+    background-color: #F4CE14;
+    color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
