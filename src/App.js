@@ -9,9 +9,35 @@ import Customersay from "./components/customersay.js"
 import Chicago from "./components/Chicago.js"
 import Booking from './components/Booking.js'
 import { Routes, Route, Link } from 'react-router-dom'
+import { useState } from "react";
+import { useReducer } from 'react';
 
+function updateTimes (){
+  const availableTime = [
+    {value: "17:00", label:"17:00"},
+    {value: "18:00", label:"18:00"},
+    {value: "19:00", label:"19:00"},
+    {value: "20:00", label:"20:00"},
+    {value: "21:00", label:"21:00"},
+    {value: "22:00", label:"22:00"}
+  ]
+   return availableTime;
+}
+
+function initializeTimes (){
+  return '';
+}
 
 function App() {
+  const [availableTimes, setTime] = useReducer("");
+  const availableTime = [
+      {value: "17:00", label:"17:00"},
+      {value: "18:00", label:"18:00"},
+      {value: "19:00", label:"19:00"},
+      {value: "20:00", label:"20:00"},
+      {value: "21:00", label:"21:00"},
+      {value: "22:00", label:"22:00"}
+  ]
   return (
       
         <main>
@@ -30,7 +56,7 @@ function App() {
                           <Route path="/specials" element={<Specials />} />
                           <Route path="/customersay" element={<Customersay />} />
                           <Route path="/chicago" element={<Chicago />} />
-                          <Route path="/booking" element={<Booking />} />
+                          <Route path="/booking" element={<Booking availableTimes={availableTimes} setTime={setTime} availableTime={availableTime}/>} />
                       </Routes>
                   </ul>
               </div>
