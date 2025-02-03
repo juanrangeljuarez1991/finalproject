@@ -24,7 +24,20 @@ function updateTimes (){
    return availableTime;
 }
 
+// https://jsonbin.io/
 function initializeTimes (){
+/*
+  const [btcData, setBtcData] = useState('');
+  const fetchData = () => {
+    fetch(`https://api.jsonbin.io/v3/qs/679e830eacd3cb34a8d6ad52`)
+      .then((response) => response.json())
+      .then((jsonData) => setBtcData(jsonData.bpi.record.USD))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);*/
   return '';
 }
 
