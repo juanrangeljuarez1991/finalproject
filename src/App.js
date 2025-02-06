@@ -25,9 +25,12 @@ function updateTimes (){
 }
 
 // https://jsonbin.io/
-function initializeTimes (){
-/*
-  const [btcData, setBtcData] = useState('');
+function initializeTimes(){
+  /*
+  const [btcData, setBtcData] = useState(0);
+ 
+
+  
   const fetchData = () => {
     fetch(`https://api.jsonbin.io/v3/qs/679e830eacd3cb34a8d6ad52`)
       .then((response) => response.json())
@@ -39,6 +42,10 @@ function initializeTimes (){
     fetchData();
   }, []);*/
   return '';
+}
+
+function submitForm(){
+
 }
 
 function App() {
@@ -82,26 +89,5 @@ function App() {
 
 export default App;
 
-/*
-import { ChakraProvider } from "@chakra-ui/react";
-import './App.css';
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Footer from "./components/Footer"
-<img src={require('./components/restaurant.jpg')} />
 
-function App() {
-  return (   
-      <main>
-        <Header />
-        <Nav />
-        <Main />
-        <Footer/>
-      </main>
-  );
-}
 
-export default App;
-
-*/

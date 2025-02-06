@@ -3,7 +3,10 @@ import ConfirmedBooking from "./ConfirmedBooking";
 
 const BookingForm = (props) => {
     const [date, setDate] = useState("");
-    var timeSelected = false;
+    //var timeSelected = false;
+    const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+    var countButton = 0;
+    const [ncounter, setNcounter] = useState(0);
     
     const [nguests, setNguests] = useState("");
     const [occasion, setOccasion] = useState("");
@@ -18,19 +21,50 @@ const BookingForm = (props) => {
     console.log(date);
     console.log(nguests);
     const handleTime = (e) => {
-        console.log(e.target.label);
-        props.setTime(e.target.value);
-        timeSelected = true;
+        //console.log(e.target.label);
+        setDate(e.target.value);
     }
 
     const handleBooking = () => {
         setShowBooking(true);
-        alert("Booked");
+    };
+
+    const validateButton = () => {
+        countButton = countButton + 2;
+       // setNcounter(ncounter+1);
+        if(countButton > 0){
+            setIsButtonEnabled(true); 
+        }
     };
 
     const handleOccasion = (e) =>{
-        console.log(e.target.value);
         setOccasion(e.target.value);
+        countButton = countButton + 2;
+        setNcounter(ncounter+1);
+        console.log("C "+countButton + " Z "+ncounter);
+        if(countButton > 0){
+            setIsButtonEnabled(true); 
+        }
+    }
+
+    const getTime = (e) => {
+        setDate(e.target.value);
+        countButton = countButton + 2;
+        setNcounter(ncounter+1);
+        if(countButton > 0){
+            setIsButtonEnabled(true); 
+        }
+    }
+
+    const getGuests = (e) => {
+        setNguests(e.target.value);
+        if(nguests > 0){
+            countButton = countButton + 2;
+            setNcounter(ncounter+1);
+        }
+        if(countButton > 0){
+            setIsButtonEnabled(true); 
+        }
     }
 
     return (
@@ -39,11 +73,15 @@ const BookingForm = (props) => {
                 <form>
                     <div data-testid="todo-1">
                         <label for="res-date">Choose date</label>
-                        <input value={date} type="date" id="res-date" onChange={ e=>setDate(e.target.value) }/>
+                        <input value={date} type="date" id="res-date" onChange={ getTime }/>
                     </div>
                      <div>
                         <label for="res-time">Choose time</label>
-                        <select id="res-time" value={props.availableTimes} onChange={handleTime}>
+                        <select id="res-time" value={props.availableTimes} onChange={ () =>{
+                            handleTime()
+                            validateButton()
+                        }
+                        }>
                             { props.availableTime.map(option => (
                                 <option value={option.value}>{option.label}</option>
                             ))}
@@ -51,7 +89,7 @@ const BookingForm = (props) => {
                      </div>
                     <div>
                         <label for="guests">Number of guests</label>
-                        <input value={nguests} type="number" placeholder="1" min="1" max="10" id="guests" onChange={ e=>setNguests(e.target.value)}/>
+                        <input value={nguests} type="number" placeholder="1" min="1" max="10" id="guests" onChange={ getGuests }/>
                     </div>
                     <div>
                         <label for="occasion">Occasion</label>
@@ -62,7 +100,7 @@ const BookingForm = (props) => {
                         </select>
                     </div>
                     <div>
-                        <button onClick={handleBooking}>Make Your reservation</button>
+                        <button disabled={!isButtonEnabled} onClick={handleBooking}>Make Your reservation</button>
                         {showBooking && <ConfirmedBooking />}
                     </div>
                 </form>
