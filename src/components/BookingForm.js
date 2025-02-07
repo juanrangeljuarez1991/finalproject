@@ -22,7 +22,9 @@ const BookingForm = (props) => {
     console.log(nguests);
     const handleTime = (e) => {
         //console.log(e.target.label);
-        setDate(e.target.value);
+       // setDate(e.target.value);
+       setNcounter(ncounter+1);
+       console.log("C "+countButton + " Ztime "+ncounter);
     }
 
     const handleBooking = () => {
@@ -32,7 +34,7 @@ const BookingForm = (props) => {
     const validateButton = () => {
         countButton = countButton + 2;
        // setNcounter(ncounter+1);
-        if(countButton > 0){
+        if(ncounter > 2){
             setIsButtonEnabled(true); 
         }
     };
@@ -41,8 +43,8 @@ const BookingForm = (props) => {
         setOccasion(e.target.value);
         countButton = countButton + 2;
         setNcounter(ncounter+1);
-        console.log("C "+countButton + " Z "+ncounter);
-        if(countButton > 0){
+        console.log("C "+countButton + " Zocation "+ncounter);
+        if(ncounter > 2){
             setIsButtonEnabled(true); 
         }
     }
@@ -51,18 +53,21 @@ const BookingForm = (props) => {
         setDate(e.target.value);
         countButton = countButton + 2;
         setNcounter(ncounter+1);
-        if(countButton > 0){
+        console.log("C "+countButton + " Zdate "+ncounter);
+        if(ncounter > 2){
             setIsButtonEnabled(true); 
         }
     }
 
     const getGuests = (e) => {
         setNguests(e.target.value);
+        setNcounter(ncounter+1);
+        console.log("C "+countButton + " Zguests "+ncounter);
         if(nguests > 0){
             countButton = countButton + 2;
             setNcounter(ncounter+1);
         }
-        if(countButton > 0){
+        if(ncounter > 2){
             setIsButtonEnabled(true); 
         }
     }
